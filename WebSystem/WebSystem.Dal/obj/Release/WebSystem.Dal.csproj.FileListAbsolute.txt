@@ -1,0 +1,10 @@
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\WebSystem.Dal.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\WebSystem.Dal.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\EntityFramework.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\WebSystem.Mobel.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\WebSystem.Mobel.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\EntityFramework.xml
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\obj\Release\WebSystem.Dal.csprojResolveAssemblyReference.cache
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\obj\Release\WebSystem.Dal.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Dal\obj\Release\WebSystem.Dal.pdb

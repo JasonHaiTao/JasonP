@@ -1,0 +1,12 @@
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\WebSystem.Bll.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\WebSystem.Bll.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\WebSystem.Dal.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\WebSystem.Mobel.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\EntityFramework.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\WebSystem.Dal.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\WebSystem.Mobel.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\EntityFramework.xml
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\obj\Release\WebSystem.Bll.csprojResolveAssemblyReference.cache
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\obj\Release\WebSystem.Bll.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Bll\obj\Release\WebSystem.Bll.pdb

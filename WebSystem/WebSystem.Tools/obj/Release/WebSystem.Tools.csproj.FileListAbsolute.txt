@@ -1,0 +1,8 @@
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Release\WebSystem.Tools.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Release\WebSystem.Tools.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Release\System.Net.Http.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Release\System.Net.Http.xml
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Release\zh-Hans\System.Net.Http.resources.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\obj\Release\WebSystem.Tools.csprojResolveAssemblyReference.cache
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\obj\Release\WebSystem.Tools.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\obj\Release\WebSystem.Tools.pdb

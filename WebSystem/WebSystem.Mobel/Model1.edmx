@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="travelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Ads_Id" />
+          </Key>
+          <Property Name="Ads_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ads_Use_Id" Type="int" />
+          <Property Name="Ads_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ads_Sex" Type="nchar" MaxLength="10" />
+          <Property Name="Ads_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ads_CardNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ads_Address" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Adn_Id" />
+          </Key>
+          <Property Name="Adn_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adn_LoginName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adn_Pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adn_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adn_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adn_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adn_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adn_CreateDt" Type="datetime" />
+          <Property Name="Adn_Udt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AdnRleMnu">
+          <Key>
+            <PropertyRef Name="Arm_Id" />
+          </Key>
+          <Property Name="Arm_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Arm_Adn_Id" Type="int" />
+          <Property Name="Arm_Rle_Id" Type="int" />
+          <Property Name="Arm_Mnu_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Advisory">
+          <Key>
+            <PropertyRef Name="Adv_Id" />
+          </Key>
+          <Property Name="Adv_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adv_Ptt_Id" Type="int" />
+          <Property Name="Adv_Pirce" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Adv_SellPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Adv_MemberPrice" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Ara_Id" />
+          </Key>
+          <Property Name="Ara_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ara_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ara_Aty_Id" Type="int" />
+          <Property Name="Ara_CDt" Type="datetime" />
+          <Property Name="Ara_Desc" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="AreaType">
+          <Key>
+            <PropertyRef Name="Aty_Id" />
+          </Key>
+          <Property Name="Aty_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aty_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aty_CreateDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BaoXian">
+          <Key>
+            <PropertyRef Name="Bxn_Id" />
+          </Key>
+          <Property Name="Bxn_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bxn_Ptt_Id" Type="int" />
+          <Property Name="Bxn_Type" Type="int" />
+          <Property Name="Bxn_Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Bxn_SellPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Bxn_MemberPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Bxn_DtType" Type="int" />
+        </EntityType>
+        <EntityType Name="BxUser">
+          <Key>
+            <PropertyRef Name="Bxu_Id" />
+          </Key>
+          <Property Name="Bxu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bxu_Name" Type="nchar" MaxLength="10" />
+          <Property Name="Bxu_Cardno" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bxu_Use_Id" Type="int" />
+          <Property Name="Bxu_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bxu_Sex" Type="nchar" MaxLength="10" />
+          <Property Name="Bxu_BxdNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DtType">
+          <Key>
+            <PropertyRef Name="Dtt_Id" />
+          </Key>
+          <Property Name="Dtt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dtt_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dtt_Sdts" Type="int" />
+          <Property Name="Dtt_Edts" Type="int" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Mnu_Id" />
+          </Key>
+          <Property Name="Mnu_Id" Type="int" Nullable="false" />
+          <Property Name="Mnu_ParentId" Type="int" />
+          <Property Name="Mnu_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mnu_Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mnu_IsShow" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="Odd_Id" />
+          </Key>
+          <Property Name="Odd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Odd_Ara_Id" Type="int" />
+          <Property Name="Odd_Odr_Id" Type="int" />
+          <Property Name="Odd_Prd_Id" Type="int" />
+          <Property Name="Odd_Quantity" Type="int" />
+          <Property Name="Odd_Days" Type="int" />
+          <Property Name="Odd_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Odd_CreateDt" Type="datetime" />
+          <Property Name="Odd_Status" Type="varchar" MaxLength="20" />
+          <Property Name="Odd_KDNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Odr_Id" />
+          </Key>
+          <Property Name="Odr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Odr_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Odr_Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Odr_Dt" Type="datetime" />
+          <Property Name="Odr_Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="Odr_Use_Id" Type="int" />
+          <Property Name="Odr_Ads_Id" Type="int" />
+          <Property Name="Odr_Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Odr_Sdt" Type="datetime" />
+          <Property Name="Odr_Edt" Type="datetime" />
+          <Property Name="Odr_Ara_Id" Type="int" />
+          <Property Name="Odr_Zqu_Id" Type="int" />
+          <Property Name="Odr_BxuIds" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Odr_Yjjs" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Point">
+          <Key>
+            <PropertyRef Name="Pit_Id" />
+          </Key>
+          <Property Name="Pit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pit_Use_Id" Type="int" />
+          <Property Name="Pit_Totals" Type="int" />
+          <Property Name="Pit_Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="Pit_CreateDt" Type="datetime" />
+          <Property Name="Pit_UpdateDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PrdType">
+          <Key>
+            <PropertyRef Name="Ptt_Id" />
+          </Key>
+          <Property Name="Ptt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ptt_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ptt_ParentId" Type="int" />
+          <Property Name="Ptt_Desc" Type="nvarchar" MaxLength="500" />
+          <Property Name="Ptt_Sort" Type="int" />
+          <Property Name="Ptt_CreateDt" Type="datetime" />
+          <Property Name="Ptt_UpdateDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Price">
+          <Key>
+            <PropertyRef Name="Pce_Id" />
+          </Key>
+          <Property Name="Pce_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pce_Prd_Id" Type="int" />
+          <Property Name="Pce_Sup_Id" Type="int" />
+          <Property Name="Pce_Aty_Id" Type="int" />
+          <Property Name="Pce_Ara_Id" Type="int" />
+          <Property Name="Pce_Dtt_Id" Type="int" />
+          <Property Name="Pce_Price" Type="money" />
+          <Property Name="Pce_SellPrice" Type="money" />
+          <Property Name="Pce_MemberPrice" Type="money" />
+          <Property Name="Pce_Dis" Type="float" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Prd_Id" />
+          </Key>
+          <Property Name="Prd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prd_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prd_Desc" Type="nvarchar" MaxLength="500" />
+          <Property Name="Prd_CDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Rle_Id" />
+          </Key>
+          <Property Name="Rle_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rle_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rle_Desc" Type="nvarchar" MaxLength="500" />
+          <Property Name="Rle_CreateDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Sup_Id" />
+          </Key>
+          <Property Name="Sup_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sup_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sup_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sup_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sup_Desc" Type="nvarchar" MaxLength="500" />
+          <Property Name="Sup_Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sup_Cdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Use_Id" />
+          </Key>
+          <Property Name="Use_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Use_LoginName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_Pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_CreateDt" Type="datetime" />
+          <Property Name="Use_UpdateDt" Type="datetime" />
+          <Property Name="Use_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_HzCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_QdName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_QdCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Use_Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="travelModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdnRleMnu" EntityType="Self.AdnRleMnu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Advisory" EntityType="Self.Advisory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AreaType" EntityType="Self.AreaType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaoXian" EntityType="Self.BaoXian" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BxUser" EntityType="Self.BxUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DtType" EntityType="Self.DtType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Point" EntityType="Self.Point" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrdType" EntityType="Self.PrdType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Price" EntityType="Self.Price" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="travelModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Ads_Id" />
+          </Key>
+          <Property Name="Ads_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ads_Use_Id" Type="Int32" />
+          <Property Name="Ads_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ads_Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ads_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ads_CardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ads_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Adn_Id" />
+          </Key>
+          <Property Name="Adn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adn_LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adn_Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adn_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adn_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adn_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adn_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adn_CreateDt" Type="DateTime" Precision="3" />
+          <Property Name="Adn_Udt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AdnRleMnu">
+          <Key>
+            <PropertyRef Name="Arm_Id" />
+          </Key>
+          <Property Name="Arm_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Arm_Adn_Id" Type="Int32" />
+          <Property Name="Arm_Rle_Id" Type="Int32" />
+          <Property Name="Arm_Mnu_Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Advisory">
+          <Key>
+            <PropertyRef Name="Adv_Id" />
+          </Key>
+          <Property Name="Adv_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adv_Ptt_Id" Type="Int32" />
+          <Property Name="Adv_Pirce" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Adv_SellPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Adv_MemberPrice" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="Ara_Id" />
+          </Key>
+          <Property Name="Ara_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ara_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ara_Aty_Id" Type="Int32" />
+          <Property Name="Ara_CDt" Type="DateTime" Precision="3" />
+          <Property Name="Ara_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AreaType">
+          <Key>
+            <PropertyRef Name="Aty_Id" />
+          </Key>
+          <Property Name="Aty_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aty_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Aty_CreateDt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BaoXian">
+          <Key>
+            <PropertyRef Name="Bxn_Id" />
+          </Key>
+          <Property Name="Bxn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bxn_Ptt_Id" Type="Int32" />
+          <Property Name="Bxn_Type" Type="Int32" />
+          <Property Name="Bxn_Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Bxn_SellPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Bxn_MemberPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Bxn_DtType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BxUser">
+          <Key>
+            <PropertyRef Name="Bxu_Id" />
+          </Key>
+          <Property Name="Bxu_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bxu_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Bxu_Cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bxu_Use_Id" Type="Int32" />
+          <Property Name="Bxu_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bxu_Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Bxu_BxdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DtType">
+          <Key>
+            <PropertyRef Name="Dtt_Id" />
+          </Key>
+          <Property Name="Dtt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dtt_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dtt_Sdts" Type="Int32" />
+          <Property Name="Dtt_Edts" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Mnu_Id" />
+          </Key>
+          <Property Name="Mnu_Id" Type="Int32" Nullable="false" />
+          <Property Name="Mnu_ParentId" Type="Int32" />
+          <Property Name="Mnu_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mnu_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Mnu_IsShow" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="Odd_Id" />
+          </Key>
+          <Property Name="Odd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Odd_Ara_Id" Type="Int32" />
+          <Property Name="Odd_Odr_Id" Type="Int32" />
+          <Property Name="Odd_Prd_Id" Type="Int32" />
+          <Property Name="Odd_Quantity" Type="Int32" />
+          <Property Name="Odd_Days" Type="Int32" />
+          <Property Name="Odd_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Odd_CreateDt" Type="DateTime" Precision="3" />
+          <Property Name="Odd_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Odd_KDNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Odr_Id" />
+          </Key>
+          <Property Name="Odr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Odr_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Odr_Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Odr_Dt" Type="DateTime" Precision="3" />
+          <Property Name="Odr_Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Odr_Use_Id" Type="Int32" />
+          <Property Name="Odr_Ads_Id" Type="Int32" />
+          <Property Name="Odr_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Odr_Sdt" Type="DateTime" Precision="3" />
+          <Property Name="Odr_Edt" Type="DateTime" Precision="3" />
+          <Property Name="Odr_Ara_Id" Type="Int32" />
+          <Property Name="Odr_Zqu_Id" Type="Int32" />
+          <Property Name="Odr_BxuIds" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Odr_Yjjs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Point">
+          <Key>
+            <PropertyRef Name="Pit_Id" />
+          </Key>
+          <Property Name="Pit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pit_Use_Id" Type="Int32" />
+          <Property Name="Pit_Totals" Type="Int32" />
+          <Property Name="Pit_Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Pit_CreateDt" Type="DateTime" Precision="3" />
+          <Property Name="Pit_UpdateDt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PrdType">
+          <Key>
+            <PropertyRef Name="Ptt_Id" />
+          </Key>
+          <Property Name="Ptt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ptt_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ptt_ParentId" Type="Int32" />
+          <Property Name="Ptt_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Ptt_Sort" Type="Int32" />
+          <Property Name="Ptt_CreateDt" Type="DateTime" Precision="3" />
+          <Property Name="Ptt_UpdateDt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Price">
+          <Key>
+            <PropertyRef Name="Pce_Id" />
+          </Key>
+          <Property Name="Pce_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pce_Prd_Id" Type="Int32" />
+          <Property Name="Pce_Sup_Id" Type="Int32" />
+          <Property Name="Pce_Aty_Id" Type="Int32" />
+          <Property Name="Pce_Ara_Id" Type="Int32" />
+          <Property Name="Pce_Dtt_Id" Type="Int32" />
+          <Property Name="Pce_Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Pce_SellPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Pce_MemberPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Pce_Dis" Type="Double" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Prd_Id" />
+          </Key>
+          <Property Name="Prd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prd_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prd_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Prd_CDt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Rle_Id" />
+          </Key>
+          <Property Name="Rle_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rle_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Rle_CreateDt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Sup_Id" />
+          </Key>
+          <Property Name="Sup_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sup_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sup_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sup_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sup_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Sup_Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sup_Cdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Use_Id" />
+          </Key>
+          <Property Name="Use_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Use_LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_CreateDt" Type="DateTime" Precision="3" />
+          <Property Name="Use_UpdateDt" Type="DateTime" Precision="3" />
+          <Property Name="Use_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_HzCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_QdName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_QdCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Use_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="travelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="AdnRleMnus" EntityType="Self.AdnRleMnu" />
+          <EntitySet Name="Advisories" EntityType="Self.Advisory" />
+          <EntitySet Name="Areas" EntityType="Self.Area" />
+          <EntitySet Name="AreaTypes" EntityType="Self.AreaType" />
+          <EntitySet Name="BaoXians" EntityType="Self.BaoXian" />
+          <EntitySet Name="BxUsers" EntityType="Self.BxUser" />
+          <EntitySet Name="DtTypes" EntityType="Self.DtType" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Points" EntityType="Self.Point" />
+          <EntitySet Name="PrdTypes" EntityType="Self.PrdType" />
+          <EntitySet Name="Prices" EntityType="Self.Price" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="travelModelStoreContainer" CdmEntityContainer="travelEntities">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="travelModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Ads_Id" ColumnName="Ads_Id" />
+                <ScalarProperty Name="Ads_Use_Id" ColumnName="Ads_Use_Id" />
+                <ScalarProperty Name="Ads_Name" ColumnName="Ads_Name" />
+                <ScalarProperty Name="Ads_Sex" ColumnName="Ads_Sex" />
+                <ScalarProperty Name="Ads_Tel" ColumnName="Ads_Tel" />
+                <ScalarProperty Name="Ads_CardNo" ColumnName="Ads_CardNo" />
+                <ScalarProperty Name="Ads_Address" ColumnName="Ads_Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="travelModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Adn_Id" ColumnName="Adn_Id" />
+                <ScalarProperty Name="Adn_LoginName" ColumnName="Adn_LoginName" />
+                <ScalarProperty Name="Adn_Pwd" ColumnName="Adn_Pwd" />
+                <ScalarProperty Name="Adn_Type" ColumnName="Adn_Type" />
+                <ScalarProperty Name="Adn_Name" ColumnName="Adn_Name" />
+                <ScalarProperty Name="Adn_Tel" ColumnName="Adn_Tel" />
+                <ScalarProperty Name="Adn_Email" ColumnName="Adn_Email" />
+                <ScalarProperty Name="Adn_CreateDt" ColumnName="Adn_CreateDt" />
+                <ScalarProperty Name="Adn_Udt" ColumnName="Adn_Udt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdnRleMnus">
+            <EntityTypeMapping TypeName="travelModel.AdnRleMnu">
+              <MappingFragment StoreEntitySet="AdnRleMnu">
+                <ScalarProperty Name="Arm_Id" ColumnName="Arm_Id" />
+                <ScalarProperty Name="Arm_Adn_Id" ColumnName="Arm_Adn_Id" />
+                <ScalarProperty Name="Arm_Rle_Id" ColumnName="Arm_Rle_Id" />
+                <ScalarProperty Name="Arm_Mnu_Id" ColumnName="Arm_Mnu_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advisories">
+            <EntityTypeMapping TypeName="travelModel.Advisory">
+              <MappingFragment StoreEntitySet="Advisory">
+                <ScalarProperty Name="Adv_Id" ColumnName="Adv_Id" />
+                <ScalarProperty Name="Adv_Ptt_Id" ColumnName="Adv_Ptt_Id" />
+                <ScalarProperty Name="Adv_Pirce" ColumnName="Adv_Pirce" />
+                <ScalarProperty Name="Adv_SellPrice" ColumnName="Adv_SellPrice" />
+                <ScalarProperty Name="Adv_MemberPrice" ColumnName="Adv_MemberPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="travelModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="Ara_Id" ColumnName="Ara_Id" />
+                <ScalarProperty Name="Ara_Name" ColumnName="Ara_Name" />
+                <ScalarProperty Name="Ara_Aty_Id" ColumnName="Ara_Aty_Id" />
+                <ScalarProperty Name="Ara_CDt" ColumnName="Ara_CDt" />
+                <ScalarProperty Name="Ara_Desc" ColumnName="Ara_Desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AreaTypes">
+            <EntityTypeMapping TypeName="travelModel.AreaType">
+              <MappingFragment StoreEntitySet="AreaType">
+                <ScalarProperty Name="Aty_Id" ColumnName="Aty_Id" />
+                <ScalarProperty Name="Aty_Name" ColumnName="Aty_Name" />
+                <ScalarProperty Name="Aty_CreateDt" ColumnName="Aty_CreateDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaoXians">
+            <EntityTypeMapping TypeName="travelModel.BaoXian">
+              <MappingFragment StoreEntitySet="BaoXian">
+                <ScalarProperty Name="Bxn_Id" ColumnName="Bxn_Id" />
+                <ScalarProperty Name="Bxn_Ptt_Id" ColumnName="Bxn_Ptt_Id" />
+                <ScalarProperty Name="Bxn_Type" ColumnName="Bxn_Type" />
+                <ScalarProperty Name="Bxn_Price" ColumnName="Bxn_Price" />
+                <ScalarProperty Name="Bxn_SellPrice" ColumnName="Bxn_SellPrice" />
+                <ScalarProperty Name="Bxn_MemberPrice" ColumnName="Bxn_MemberPrice" />
+                <ScalarProperty Name="Bxn_DtType" ColumnName="Bxn_DtType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BxUsers">
+            <EntityTypeMapping TypeName="travelModel.BxUser">
+              <MappingFragment StoreEntitySet="BxUser">
+                <ScalarProperty Name="Bxu_Id" ColumnName="Bxu_Id" />
+                <ScalarProperty Name="Bxu_Name" ColumnName="Bxu_Name" />
+                <ScalarProperty Name="Bxu_Cardno" ColumnName="Bxu_Cardno" />
+                <ScalarProperty Name="Bxu_Use_Id" ColumnName="Bxu_Use_Id" />
+                <ScalarProperty Name="Bxu_Tel" ColumnName="Bxu_Tel" />
+                <ScalarProperty Name="Bxu_Sex" ColumnName="Bxu_Sex" />
+                <ScalarProperty Name="Bxu_BxdNo" ColumnName="Bxu_BxdNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DtTypes">
+            <EntityTypeMapping TypeName="travelModel.DtType">
+              <MappingFragment StoreEntitySet="DtType">
+                <ScalarProperty Name="Dtt_Id" ColumnName="Dtt_Id" />
+                <ScalarProperty Name="Dtt_Title" ColumnName="Dtt_Title" />
+                <ScalarProperty Name="Dtt_Sdts" ColumnName="Dtt_Sdts" />
+                <ScalarProperty Name="Dtt_Edts" ColumnName="Dtt_Edts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="travelModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="Mnu_Id" ColumnName="Mnu_Id" />
+                <ScalarProperty Name="Mnu_ParentId" ColumnName="Mnu_ParentId" />
+                <ScalarProperty Name="Mnu_Name" ColumnName="Mnu_Name" />
+                <ScalarProperty Name="Mnu_Url" ColumnName="Mnu_Url" />
+                <ScalarProperty Name="Mnu_IsShow" ColumnName="Mnu_IsShow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="travelModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="Odd_Id" ColumnName="Odd_Id" />
+                <ScalarProperty Name="Odd_Ara_Id" ColumnName="Odd_Ara_Id" />
+                <ScalarProperty Name="Odd_Odr_Id" ColumnName="Odd_Odr_Id" />
+                <ScalarProperty Name="Odd_Prd_Id" ColumnName="Odd_Prd_Id" />
+                <ScalarProperty Name="Odd_Quantity" ColumnName="Odd_Quantity" />
+                <ScalarProperty Name="Odd_Days" ColumnName="Odd_Days" />
+                <ScalarProperty Name="Odd_Type" ColumnName="Odd_Type" />
+                <ScalarProperty Name="Odd_CreateDt" ColumnName="Odd_CreateDt" />
+                <ScalarProperty Name="Odd_Status" ColumnName="Odd_Status" />
+                <ScalarProperty Name="Odd_KDNo" ColumnName="Odd_KDNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="travelModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Odr_Id" ColumnName="Odr_Id" />
+                <ScalarProperty Name="Odr_Code" ColumnName="Odr_Code" />
+                <ScalarProperty Name="Odr_Amount" ColumnName="Odr_Amount" />
+                <ScalarProperty Name="Odr_Dt" ColumnName="Odr_Dt" />
+                <ScalarProperty Name="Odr_Remark" ColumnName="Odr_Remark" />
+                <ScalarProperty Name="Odr_Use_Id" ColumnName="Odr_Use_Id" />
+                <ScalarProperty Name="Odr_Ads_Id" ColumnName="Odr_Ads_Id" />
+                <ScalarProperty Name="Odr_Status" ColumnName="Odr_Status" />
+                <ScalarProperty Name="Odr_Sdt" ColumnName="Odr_Sdt" />
+                <ScalarProperty Name="Odr_Edt" ColumnName="Odr_Edt" />
+                <ScalarProperty Name="Odr_Ara_Id" ColumnName="Odr_Ara_Id" />
+                <ScalarProperty Name="Odr_Zqu_Id" ColumnName="Odr_Zqu_Id" />
+                <ScalarProperty Name="Odr_BxuIds" ColumnName="Odr_BxuIds" />
+                <ScalarProperty Name="Odr_Yjjs" ColumnName="Odr_Yjjs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Points">
+            <EntityTypeMapping TypeName="travelModel.Point">
+              <MappingFragment StoreEntitySet="Point">
+                <ScalarProperty Name="Pit_Id" ColumnName="Pit_Id" />
+                <ScalarProperty Name="Pit_Use_Id" ColumnName="Pit_Use_Id" />
+                <ScalarProperty Name="Pit_Totals" ColumnName="Pit_Totals" />
+                <ScalarProperty Name="Pit_Remark" ColumnName="Pit_Remark" />
+                <ScalarProperty Name="Pit_CreateDt" ColumnName="Pit_CreateDt" />
+                <ScalarProperty Name="Pit_UpdateDt" ColumnName="Pit_UpdateDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrdTypes">
+            <EntityTypeMapping TypeName="travelModel.PrdType">
+              <MappingFragment StoreEntitySet="PrdType">
+                <ScalarProperty Name="Ptt_Id" ColumnName="Ptt_Id" />
+                <ScalarProperty Name="Ptt_Name" ColumnName="Ptt_Name" />
+                <ScalarProperty Name="Ptt_ParentId" ColumnName="Ptt_ParentId" />
+                <ScalarProperty Name="Ptt_Desc" ColumnName="Ptt_Desc" />
+                <ScalarProperty Name="Ptt_Sort" ColumnName="Ptt_Sort" />
+                <ScalarProperty Name="Ptt_CreateDt" ColumnName="Ptt_CreateDt" />
+                <ScalarProperty Name="Ptt_UpdateDt" ColumnName="Ptt_UpdateDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prices">
+            <EntityTypeMapping TypeName="travelModel.Price">
+              <MappingFragment StoreEntitySet="Price">
+                <ScalarProperty Name="Pce_Id" ColumnName="Pce_Id" />
+                <ScalarProperty Name="Pce_Prd_Id" ColumnName="Pce_Prd_Id" />
+                <ScalarProperty Name="Pce_Sup_Id" ColumnName="Pce_Sup_Id" />
+                <ScalarProperty Name="Pce_Aty_Id" ColumnName="Pce_Aty_Id" />
+                <ScalarProperty Name="Pce_Ara_Id" ColumnName="Pce_Ara_Id" />
+                <ScalarProperty Name="Pce_Dtt_Id" ColumnName="Pce_Dtt_Id" />
+                <ScalarProperty Name="Pce_Price" ColumnName="Pce_Price" />
+                <ScalarProperty Name="Pce_SellPrice" ColumnName="Pce_SellPrice" />
+                <ScalarProperty Name="Pce_MemberPrice" ColumnName="Pce_MemberPrice" />
+                <ScalarProperty Name="Pce_Dis" ColumnName="Pce_Dis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="travelModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Prd_Id" ColumnName="Prd_Id" />
+                <ScalarProperty Name="Prd_Name" ColumnName="Prd_Name" />
+                <ScalarProperty Name="Prd_Desc" ColumnName="Prd_Desc" />
+                <ScalarProperty Name="Prd_CDt" ColumnName="Prd_CDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="travelModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Rle_Id" ColumnName="Rle_Id" />
+                <ScalarProperty Name="Rle_Name" ColumnName="Rle_Name" />
+                <ScalarProperty Name="Rle_Desc" ColumnName="Rle_Desc" />
+                <ScalarProperty Name="Rle_CreateDt" ColumnName="Rle_CreateDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="travelModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="Sup_Id" ColumnName="Sup_Id" />
+                <ScalarProperty Name="Sup_Name" ColumnName="Sup_Name" />
+                <ScalarProperty Name="Sup_Code" ColumnName="Sup_Code" />
+                <ScalarProperty Name="Sup_Type" ColumnName="Sup_Type" />
+                <ScalarProperty Name="Sup_Desc" ColumnName="Sup_Desc" />
+                <ScalarProperty Name="Sup_Mobile" ColumnName="Sup_Mobile" />
+                <ScalarProperty Name="Sup_Cdt" ColumnName="Sup_Cdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="travelModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Use_Id" ColumnName="Use_Id" />
+                <ScalarProperty Name="Use_LoginName" ColumnName="Use_LoginName" />
+                <ScalarProperty Name="Use_Pwd" ColumnName="Use_Pwd" />
+                <ScalarProperty Name="Use_Type" ColumnName="Use_Type" />
+                <ScalarProperty Name="Use_Mobile" ColumnName="Use_Mobile" />
+                <ScalarProperty Name="Use_Email" ColumnName="Use_Email" />
+                <ScalarProperty Name="Use_Code" ColumnName="Use_Code" />
+                <ScalarProperty Name="Use_CreateDt" ColumnName="Use_CreateDt" />
+                <ScalarProperty Name="Use_UpdateDt" ColumnName="Use_UpdateDt" />
+                <ScalarProperty Name="Use_Name" ColumnName="Use_Name" />
+                <ScalarProperty Name="Use_HzCode" ColumnName="Use_HzCode" />
+                <ScalarProperty Name="Use_QdName" ColumnName="Use_QdName" />
+                <ScalarProperty Name="Use_QdCode" ColumnName="Use_QdCode" />
+                <ScalarProperty Name="Use_Status" ColumnName="Use_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

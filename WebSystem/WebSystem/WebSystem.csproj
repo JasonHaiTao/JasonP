@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{455B78EB-E9FA-4974-A23C-9D89FC775E4D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSystem</RootNamespace>
+    <AssemblyName>WebSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\js\jquery-2.1.1.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\font\adminthemes-webfont.svg" />
+    <Content Include="css\jquery.mCustomScrollbar.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="css\font\adminthemes-webfont.eot" />
+    <Content Include="css\font\adminthemes-webfont.ttf" />
+    <Content Include="css\font\adminthemes-webfont.woff" />
+    <Content Include="css\font\adminthemes-webfont.woff2" />
+    <Content Include="css\font\adminThemes.ttf" />
+    <None Include="Properties\PublishProfiles\订单管理系统test.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="images\admin_logo.png" />
+    <Content Include="images\icon\apple-touch-icon-120x120-precomposed.png" />
+    <Content Include="images\icon\apple-touch-icon-196x196-precomposed.png" />
+    <Content Include="images\icon\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="images\icon\DefaultAvatar.jpg" />
+    <Content Include="images\icon\favicon.ico" />
+    <Content Include="js\Chart.js" />
+    <Content Include="js\dialogs\anchor\anchor.html" />
+    <Content Include="js\dialogs\attachment\attachment.css" />
+    <Content Include="js\dialogs\attachment\attachment.html" />
+    <Content Include="js\dialogs\attachment\attachment.js" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="js\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="js\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="js\dialogs\attachment\images\alignicon.png" />
+    <Content Include="js\dialogs\attachment\images\bg.png" />
+    <Content Include="js\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="js\dialogs\attachment\images\file-icons.png" />
+    <Content Include="js\dialogs\attachment\images\icons.gif" />
+    <Content Include="js\dialogs\attachment\images\icons.png" />
+    <Content Include="js\dialogs\attachment\images\image.png" />
+    <Content Include="js\dialogs\attachment\images\progress.png" />
+    <Content Include="js\dialogs\attachment\images\success.gif" />
+    <Content Include="js\dialogs\attachment\images\success.png" />
+    <Content Include="js\dialogs\background\background.css" />
+    <Content Include="js\dialogs\background\background.html" />
+    <Content Include="js\dialogs\background\background.js" />
+    <Content Include="js\dialogs\background\images\bg.png" />
+    <Content Include="js\dialogs\background\images\success.png" />
+    <Content Include="js\dialogs\charts\chart.config.js" />
+    <Content Include="js\dialogs\charts\charts.css" />
+    <Content Include="js\dialogs\charts\charts.html" />
+    <Content Include="js\dialogs\charts\charts.js" />
+    <Content Include="js\dialogs\charts\images\charts0.png" />
+    <Content Include="js\dialogs\charts\images\charts1.png" />
+    <Content Include="js\dialogs\charts\images\charts2.png" />
+    <Content Include="js\dialogs\charts\images\charts3.png" />
+    <Content Include="js\dialogs\charts\images\charts4.png" />
+    <Content Include="js\dialogs\charts\images\charts5.png" />
+    <Content Include="js\dialogs\emotion\emotion.css" />
+    <Content Include="js\dialogs\emotion\emotion.html" />
+    <Content Include="js\dialogs\emotion\emotion.js" />
+    <Content Include="js\dialogs\emotion\images\0.gif" />
+    <Content Include="js\dialogs\emotion\images\bface.gif" />
+    <Content Include="js\dialogs\emotion\images\cface.gif" />
+    <Content Include="js\dialogs\emotion\images\fface.gif" />
+    <Content Include="js\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="js\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="js\dialogs\emotion\images\tface.gif" />
+    <Content Include="js\dialogs\emotion\images\wface.gif" />
+    <Content Include="js\dialogs\emotion\images\yface.gif" />
+    <Content Include="js\dialogs\gmap\gmap.html" />
+    <Content Include="js\dialogs\help\help.css" />
+    <Content Include="js\dialogs\help\help.html" />
+    <Content Include="js\dialogs\help\help.js" />
+    <Content Include="js\dialogs\image\image.css" />
+    <Content Include="js\dialogs\image\image.html" />
+    <Content Include="js\dialogs\image\image.js" />
+    <Content Include="js\dialogs\image\images\alignicon.jpg" />
+    <Content Include="js\dialogs\image\images\bg.png" />
+    <Content Include="js\dialogs\image\images\icons.gif" />
+    <Content Include="js\dialogs\image\images\icons.png" />
+    <Content Include="js\dialogs\image\images\image.png" />
+    <Content Include="js\dialogs\image\images\progress.png" />
+    <Content Include="js\dialogs\image\images\success.gif" />
+    <Content Include="js\dialogs\image\images\success.png" />
+    <Content Include="js\dialogs\insertframe\insertframe.html" />
+    <Content Include="js\dialogs\internal.js" />
+    <Content Include="js\dialogs\link\link.html" />
+    <Content Include="js\dialogs\map\map.html" />
+    <Content Include="js\dialogs\map\show.html" />
+    <Content Include="js\dialogs\music\music.css" />
+    <Content Include="js\dialogs\music\music.html" />
+    <Content Include="js\dialogs\music\music.js" />
+    <Content Include="js\dialogs\preview\preview.html" />
+    <Content Include="js\dialogs\scrawl\images\addimg.png" />
+    <Content Include="js\dialogs\scrawl\images\brush.png" />
+    <Content Include="js\dialogs\scrawl\images\delimg.png" />
+    <Content Include="js\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="js\dialogs\scrawl\images\empty.png" />
+    <Content Include="js\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="js\dialogs\scrawl\images\eraser.png" />
+    <Content Include="js\dialogs\scrawl\images\redo.png" />
+    <Content Include="js\dialogs\scrawl\images\redoH.png" />
+    <Content Include="js\dialogs\scrawl\images\scale.png" />
+    <Content Include="js\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="js\dialogs\scrawl\images\size.png" />
+    <Content Include="js\dialogs\scrawl\images\undo.png" />
+    <Content Include="js\dialogs\scrawl\images\undoH.png" />
+    <Content Include="js\dialogs\scrawl\scrawl.css" />
+    <Content Include="js\dialogs\scrawl\scrawl.html" />
+    <Content Include="js\dialogs\scrawl\scrawl.js" />
+    <Content Include="js\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="js\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="js\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="js\dialogs\spechars\spechars.html" />
+    <Content Include="js\dialogs\spechars\spechars.js" />
+    <Content Include="js\dialogs\table\dragicon.png" />
+    <Content Include="js\dialogs\table\edittable.css" />
+    <Content Include="js\dialogs\table\edittable.html" />
+    <Content Include="js\dialogs\table\edittable.js" />
+    <Content Include="js\dialogs\table\edittd.html" />
+    <Content Include="js\dialogs\table\edittip.html" />
+    <Content Include="js\dialogs\template\config.js" />
+    <Content Include="js\dialogs\template\images\bg.gif" />
+    <Content Include="js\dialogs\template\images\pre0.png" />
+    <Content Include="js\dialogs\template\images\pre1.png" />
+    <Content Include="js\dialogs\template\images\pre2.png" />
+    <Content Include="js\dialogs\template\images\pre3.png" />
+    <Content Include="js\dialogs\template\images\pre4.png" />
+    <Content Include="js\dialogs\template\template.css" />
+    <Content Include="js\dialogs\template\template.html" />
+    <Content Include="js\dialogs\template\template.js" />
+    <Content Include="js\dialogs\video\images\bg.png" />
+    <Content Include="js\dialogs\video\images\center_focus.jpg" />
+    <Content Include="js\dialogs\video\images\file-icons.gif" />
+    <Content Include="js\dialogs\video\images\file-icons.png" />
+    <Content Include="js\dialogs\video\images\icons.gif" />
+    <Content Include="js\dialogs\video\images\icons.png" />
+    <Content Include="js\dialogs\video\images\image.png" />
+    <Content Include="js\dialogs\video\images\left_focus.jpg" />
+    <Content Include="js\dialogs\video\images\none_focus.jpg" />
+    <Content Include="js\dialogs\video\images\progress.png" />
+    <Content Include="js\dialogs\video\images\right_focus.jpg" />
+    <Content Include="js\dialogs\video\images\success.gif" />
+    <Content Include="js\dialogs\video\images\success.png" />
+    <Content Include="js\dialogs\video\video.css" />
+    <Content Include="js\dialogs\video\video.html" />
+    <Content Include="js\dialogs\video\video.js" />
+    <Content Include="js\dialogs\webapp\webapp.html" />
+    <Content Include="js\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="js\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="js\dialogs\wordimage\tangram.js" />
+    <Content Include="js\dialogs\wordimage\wordimage.html" />
+    <Content Include="js\dialogs\wordimage\wordimage.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery-1.8.3.js" />
+    <Content Include="js\jquery-1.8.3.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="js\lang\en\en.js" />
+    <Content Include="js\lang\en\images\addimage.png" />
+    <Content Include="js\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="js\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="js\lang\en\images\background.png" />
+    <Content Include="js\lang\en\images\button.png" />
+    <Content Include="js\lang\en\images\copy.png" />
+    <Content Include="js\lang\en\images\deletedisable.png" />
+    <Content Include="js\lang\en\images\deleteenable.png" />
+    <Content Include="js\lang\en\images\listbackground.png" />
+    <Content Include="js\lang\en\images\localimage.png" />
+    <Content Include="js\lang\en\images\music.png" />
+    <Content Include="js\lang\en\images\rotateleftdisable.png" />
+    <Content Include="js\lang\en\images\rotateleftenable.png" />
+    <Content Include="js\lang\en\images\rotaterightdisable.png" />
+    <Content Include="js\lang\en\images\rotaterightenable.png" />
+    <Content Include="js\lang\en\images\upload.png" />
+    <Content Include="js\lang\zh-cn\images\copy.png" />
+    <Content Include="js\lang\zh-cn\images\localimage.png" />
+    <Content Include="js\lang\zh-cn\images\music.png" />
+    <Content Include="js\lang\zh-cn\images\upload.png" />
+    <Content Include="js\lang\zh-cn\zh-cn.js" />
+    <Content Include="js\Particleground.js" />
+    <Content Include="js\pie.js" />
+    <Content Include="js\script.js" />
+    <Content Include="js\serial.js" />
+    <Content Include="js\themes\default\css\ueditor.css" />
+    <Content Include="js\themes\default\css\ueditor.min.css" />
+    <Content Include="js\themes\default\dialogbase.css" />
+    <Content Include="js\themes\default\images\anchor.gif" />
+    <Content Include="js\themes\default\images\arrow.png" />
+    <Content Include="js\themes\default\images\arrow_down.png" />
+    <Content Include="js\themes\default\images\arrow_up.png" />
+    <Content Include="js\themes\default\images\button-bg.gif" />
+    <Content Include="js\themes\default\images\cancelbutton.gif" />
+    <Content Include="js\themes\default\images\charts.png" />
+    <Content Include="js\themes\default\images\cursor_h.gif" />
+    <Content Include="js\themes\default\images\cursor_h.png" />
+    <Content Include="js\themes\default\images\cursor_v.gif" />
+    <Content Include="js\themes\default\images\cursor_v.png" />
+    <Content Include="js\themes\default\images\dialog-title-bg.png" />
+    <Content Include="js\themes\default\images\filescan.png" />
+    <Content Include="js\themes\default\images\highlighted.gif" />
+    <Content Include="js\themes\default\images\icons-all.gif" />
+    <Content Include="js\themes\default\images\icons.gif" />
+    <Content Include="js\themes\default\images\icons.png" />
+    <Content Include="js\themes\default\images\loaderror.png" />
+    <Content Include="js\themes\default\images\loading.gif" />
+    <Content Include="js\themes\default\images\lock.gif" />
+    <Content Include="js\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="js\themes\default\images\pagebreak.gif" />
+    <Content Include="js\themes\default\images\scale.png" />
+    <Content Include="js\themes\default\images\sortable.png" />
+    <Content Include="js\themes\default\images\spacer.gif" />
+    <Content Include="js\themes\default\images\sparator_v.png" />
+    <Content Include="js\themes\default\images\table-cell-align.png" />
+    <Content Include="js\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="js\themes\default\images\toolbar_bg.png" />
+    <Content Include="js\themes\default\images\unhighlighted.gif" />
+    <Content Include="js\themes\default\images\upload.png" />
+    <Content Include="js\themes\default\images\videologo.gif" />
+    <Content Include="js\themes\default\images\word.gif" />
+    <Content Include="js\themes\default\images\wordpaste.png" />
+    <Content Include="js\themes\iframe.css" />
+    <Content Include="js\ueditor.all.min.js" />
+    <Content Include="js\ueditor.config.js" />
+    <Content Include="js\verificationNumbers.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="upload\alipay.png" />
+    <Content Include="upload\goods01.jpg" />
+    <Content Include="upload\goods02.jpg" />
+    <Content Include="upload\goods03.jpg" />
+    <Content Include="upload\shentong.png" />
+    <Content Include="upload\tenpay.png" />
+    <Content Include="upload\user_001.png" />
+    <Content Include="upload\user_002.png" />
+    <Content Include="upload\wechatpay.png" />
+    <Content Include="upload\yuantong.png" />
+    <Content Include="upload\yunda.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Header.cshtml" />
+    <Content Include="Views\Order\OrderList.cshtml" />
+    <Content Include="Views\Order\OrderDetail.cshtml" />
+    <Content Include="Views\Product\ProductDetail.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\RecycleBin.cshtml" />
+    <Content Include="Views\User\AbjustFunding.cshtml" />
+    <Content Include="Views\User\MemberDetail.cshtml" />
+    <Content Include="Views\User\MemberList.cshtml" />
+    <Content Include="Views\User\MemRank.cshtml" />
+    <Content Include="Views\Statistics\DischargeStatistic.cshtml" />
+    <Content Include="Views\Statistics\SalesVolume.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebSystem.Bll\WebSystem.Bll.csproj">
+      <Project>{0b44d6e5-f1b6-4913-b284-d2c61e97e346}</Project>
+      <Name>WebSystem.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSystem.Mobel\WebSystem.Mobel.csproj">
+      <Project>{49a76b07-5ae1-4a5d-aff2-57aa2379ccfd}</Project>
+      <Name>WebSystem.Mobel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSystem.Tools\WebSystem.Tools.csproj">
+      <Project>{6cfe5e99-23fe-471c-b67e-49fa704350f0}</Project>
+      <Name>WebSystem.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2717</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2717/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

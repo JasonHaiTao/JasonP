@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tralve_test20170515.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Ads_Id" />
+    </Key>
+    <Property Name="Ads_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ads_Use_Id" Type="Int32" />
+    <Property Name="Ads_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ads_Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ads_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ads_CardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ads_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Adn_Id" />
+    </Key>
+    <Property Name="Adn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adn_LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adn_Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adn_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adn_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adn_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adn_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adn_CreateDt" Type="DateTime" Precision="3" />
+    <Property Name="Adn_Udt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Ara_Id" />
+    </Key>
+    <Property Name="Ara_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ara_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ara_Aty_Id" Type="Int32" />
+    <Property Name="Ara_CDt" Type="DateTime" Precision="3" />
+    <Property Name="Ara_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AreaType">
+    <Key>
+      <PropertyRef Name="Aty_Id" />
+    </Key>
+    <Property Name="Aty_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Aty_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Aty_CreateDt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="BxuOdrOdd">
+    <Key>
+      <PropertyRef Name="Buo_Id" />
+    </Key>
+    <Property Name="Buo_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Buo_Bxu_Id" Type="Int32" />
+    <Property Name="Buo_Odr_Id" Type="Int32" />
+    <Property Name="Buo_Odd_Id" Type="Int32" />
+    <Property Name="Buo_BxdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Buo_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Buo_Dt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BxUser">
+    <Key>
+      <PropertyRef Name="Bxu_Id" />
+    </Key>
+    <Property Name="Bxu_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bxu_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Bxu_Cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bxu_HzNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bxu_Use_Id" Type="Int32" />
+    <Property Name="Bxu_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bxu_Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Bxu_BxdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bxu_ZjType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Bxu_Birth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DtType">
+    <Key>
+      <PropertyRef Name="Dtt_Id" />
+    </Key>
+    <Property Name="Dtt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dtt_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dtt_Sdts" Type="Int32" />
+    <Property Name="Dtt_Edts" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="Odd_Id" />
+    </Key>
+    <Property Name="Odd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Odd_Ara_Id" Type="Int32" />
+    <Property Name="Odd_Odr_Id" Type="Int32" />
+    <Property Name="Odd_Prd_Id" Type="Int32" />
+    <Property Name="Odd_Quantity" Type="Int32" />
+    <Property Name="Odd_Days" Type="Int32" />
+    <Property Name="Odd_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Odd_CreateDt" Type="DateTime" Precision="3" />
+    <Property Name="Odd_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Odd_KDNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Odd_BxUIds" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Odr_Id" />
+    </Key>
+    <Property Name="Odr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Odr_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Odr_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Odr_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Odr_Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Odr_Use_Id" Type="Int32" />
+    <Property Name="Odr_Ads_Id" Type="Int32" />
+    <Property Name="Odr_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Odr_Sdt" Type="DateTime" Precision="3" />
+    <Property Name="Odr_Edt" Type="DateTime" Precision="3" />
+    <Property Name="Odr_Ara_Id" Type="Int32" />
+    <Property Name="Odr_Zqu_Id" Type="Int32" />
+    <Property Name="Odr_BxuIds" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Odr_Yjjs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Odr_BxdNos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="Pce_Id" />
+    </Key>
+    <Property Name="Pce_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pce_Prd_Id" Type="Int32" />
+    <Property Name="Pce_Sup_Id" Type="Int32" />
+    <Property Name="Pce_Aty_Id" Type="Int32" />
+    <Property Name="Pce_Ara_Id" Type="Int32" />
+    <Property Name="Pce_Dtt_Id" Type="Int32" />
+    <Property Name="Pce_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pce_SellPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pce_MemberPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pce_Dis" Type="Double" />
+    <Property Name="Pce_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Prd_Id" />
+    </Key>
+    <Property Name="Prd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prd_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prd_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Prd_CDt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Sup_Id" />
+    </Key>
+    <Property Name="Sup_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sup_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sup_Cdt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Use_Id" />
+    </Key>
+    <Property Name="Use_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Use_LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_CreateDt" Type="DateTime" Precision="3" />
+    <Property Name="Use_UpdateDt" Type="DateTime" Precision="3" />
+    <Property Name="Use_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_HzCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_QdName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_QdCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Use_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="z_AdnRleMnu">
+    <Key>
+      <PropertyRef Name="Arm_Id" />
+    </Key>
+    <Property Name="Arm_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Arm_Adn_Id" Type="Int32" />
+    <Property Name="Arm_Rle_Id" Type="Int32" />
+    <Property Name="Arm_Mnu_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="z_Advisory">
+    <Key>
+      <PropertyRef Name="Adv_Id" />
+    </Key>
+    <Property Name="Adv_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adv_Ptt_Id" Type="Int32" />
+    <Property Name="Adv_Pirce" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Adv_SellPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Adv_MemberPrice" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="z_BaoXian">
+    <Key>
+      <PropertyRef Name="Bxn_Id" />
+    </Key>
+    <Property Name="Bxn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bxn_Ptt_Id" Type="Int32" />
+    <Property Name="Bxn_Type" Type="Int32" />
+    <Property Name="Bxn_Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Bxn_SellPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Bxn_MemberPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Bxn_DtType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="z_Menu">
+    <Key>
+      <PropertyRef Name="Mnu_Id" />
+    </Key>
+    <Property Name="Mnu_Id" Type="Int32" Nullable="false" />
+    <Property Name="Mnu_ParentId" Type="Int32" />
+    <Property Name="Mnu_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mnu_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mnu_IsShow" Type="Int32" />
+  </EntityType>
+  <EntityType Name="z_Point">
+    <Key>
+      <PropertyRef Name="Pit_Id" />
+    </Key>
+    <Property Name="Pit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pit_Use_Id" Type="Int32" />
+    <Property Name="Pit_Totals" Type="Int32" />
+    <Property Name="Pit_Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Pit_CreateDt" Type="DateTime" Precision="3" />
+    <Property Name="Pit_UpdateDt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="z_PrdType">
+    <Key>
+      <PropertyRef Name="Ptt_Id" />
+    </Key>
+    <Property Name="Ptt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ptt_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ptt_ParentId" Type="Int32" />
+    <Property Name="Ptt_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ptt_Sort" Type="Int32" />
+    <Property Name="Ptt_CreateDt" Type="DateTime" Precision="3" />
+    <Property Name="Ptt_UpdateDt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="z_Role">
+    <Key>
+      <PropertyRef Name="Rle_Id" />
+    </Key>
+    <Property Name="Rle_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rle_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Rle_CreateDt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="travelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Areas" EntityType="Self.Area" />
+    <EntitySet Name="AreaTypes" EntityType="Self.AreaType" />
+    <EntitySet Name="BxuOdrOdds" EntityType="Self.BxuOdrOdd" />
+    <EntitySet Name="BxUsers" EntityType="Self.BxUser" />
+    <EntitySet Name="DtTypes" EntityType="Self.DtType" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Prices" EntityType="Self.Price" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="z_AdnRleMnu" EntityType="Self.z_AdnRleMnu" />
+    <EntitySet Name="z_Advisory" EntityType="Self.z_Advisory" />
+    <EntitySet Name="z_BaoXian" EntityType="Self.z_BaoXian" />
+    <EntitySet Name="z_Menu" EntityType="Self.z_Menu" />
+    <EntitySet Name="z_Point" EntityType="Self.z_Point" />
+    <EntitySet Name="z_PrdType" EntityType="Self.z_PrdType" />
+    <EntitySet Name="z_Role" EntityType="Self.z_Role" />
+  </EntityContainer>
+</Schema>

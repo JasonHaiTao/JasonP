@@ -1,0 +1,17 @@
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Debug\WebSystem.Tools.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Debug\WebSystem.Tools.pdb
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Debug\System.Net.Http.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Debug\System.Net.Http.xml
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\bin\Debug\zh-Hans\System.Net.Http.resources.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.csprojResolveAssemblyReference.cache
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.dll
+C:\Users\涛\Desktop\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.pdb
+F:\制作游戏的复习文档\个人项目\WebSystem\WebSystem\WebSystem.Tools\bin\Debug\WebSystem.Tools.dll
+F:\制作游戏的复习文档\个人项目\WebSystem\WebSystem\WebSystem.Tools\bin\Debug\WebSystem.Tools.pdb
+F:\制作游戏的复习文档\个人项目\WebSystem\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.csprojResolveAssemblyReference.cache
+F:\制作游戏的复习文档\个人项目\WebSystem\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.dll
+F:\制作游戏的复习文档\个人项目\WebSystem\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.pdb
+F:\制作游戏的复习文档\个人项目\Project1\WebSystem\WebSystem\WebSystem.Tools\bin\Debug\WebSystem.Tools.dll
+F:\制作游戏的复习文档\个人项目\Project1\WebSystem\WebSystem\WebSystem.Tools\bin\Debug\WebSystem.Tools.pdb
+F:\制作游戏的复习文档\个人项目\Project1\WebSystem\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.dll
+F:\制作游戏的复习文档\个人项目\Project1\WebSystem\WebSystem\WebSystem.Tools\obj\Debug\WebSystem.Tools.pdb

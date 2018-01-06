@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .tomds{
+        padding:0px;
+        margin:0px;
+        height:400px;
+        width:900px;
+    }
+     .xiaobiaoti{
+        padding-top:14px;
+        margin-top:2px;
+        height:30px;
+        width:100%;
+        background-color:#19A97B;
+       
+    }
+     .tomds{
+         height:500px;
+     }
+     .tomdslift{
+         height:500px;
+         background-color:#00ff21;
+     }
+     
+</style>
+<section>
+    <div class="rt_content">
+        <div class="page_title">
+            <h2 class="fl">数据分析</h2>
+            <a href="@Url.Action("","")" class="fr top_rt_btn add_icon">本数据纯属虚构，如有雷同，稍安勿躁！</a>
+        </div>
+        <div class="tomds">
+            <div class="xiaobiaoti" style="width:1080px;">平均每月出货量</div>
+            <div class="shuju_left" style="float:left; width:1080px;height:450px;">
+                <canvas id="canvas" width="1000" height="400" style="margin:5px"></canvas>
+            </div>
+        </div>
+        
+       
+    </div>
+    
+    <div calss="tomdslift">
+        <div class="xiaobiaotilift">平均每月出货量</div>
+        <div class="shuju_left">
+            <canvas id="myChart" ></canvas>
+        </div>
+    </div>
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="~/js/Chart.js"></script>
+<script src="~/js/script.js"></script>
+

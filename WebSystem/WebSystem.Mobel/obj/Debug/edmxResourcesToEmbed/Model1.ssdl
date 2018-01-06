@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tralve_test20170515.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Ads_Id" />
+    </Key>
+    <Property Name="Ads_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ads_Use_Id" Type="int" />
+    <Property Name="Ads_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ads_Sex" Type="nchar" MaxLength="10" />
+    <Property Name="Ads_Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ads_CardNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ads_Address" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Adn_Id" />
+    </Key>
+    <Property Name="Adn_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adn_LoginName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adn_Pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adn_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adn_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adn_Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adn_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adn_CreateDt" Type="datetime" />
+    <Property Name="Adn_Udt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Ara_Id" />
+    </Key>
+    <Property Name="Ara_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ara_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ara_Aty_Id" Type="int" />
+    <Property Name="Ara_CDt" Type="datetime" />
+    <Property Name="Ara_Desc" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="AreaType">
+    <Key>
+      <PropertyRef Name="Aty_Id" />
+    </Key>
+    <Property Name="Aty_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aty_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aty_CreateDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BxuOdrOdd">
+    <Key>
+      <PropertyRef Name="Buo_Id" />
+    </Key>
+    <Property Name="Buo_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Buo_Bxu_Id" Type="int" />
+    <Property Name="Buo_Odr_Id" Type="int" />
+    <Property Name="Buo_Odd_Id" Type="int" />
+    <Property Name="Buo_BxdNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Buo_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Buo_Dt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BxUser">
+    <Key>
+      <PropertyRef Name="Bxu_Id" />
+    </Key>
+    <Property Name="Bxu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bxu_Name" Type="nchar" MaxLength="10" />
+    <Property Name="Bxu_Cardno" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bxu_HzNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bxu_Use_Id" Type="int" />
+    <Property Name="Bxu_Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bxu_Sex" Type="nchar" MaxLength="10" />
+    <Property Name="Bxu_BxdNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bxu_ZjType" Type="nvarchar" MaxLength="10" />
+    <Property Name="Bxu_Birth" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DtType">
+    <Key>
+      <PropertyRef Name="Dtt_Id" />
+    </Key>
+    <Property Name="Dtt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dtt_Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dtt_Sdts" Type="int" />
+    <Property Name="Dtt_Edts" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="Odd_Id" />
+    </Key>
+    <Property Name="Odd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Odd_Ara_Id" Type="int" />
+    <Property Name="Odd_Odr_Id" Type="int" />
+    <Property Name="Odd_Prd_Id" Type="int" />
+    <Property Name="Odd_Quantity" Type="int" />
+    <Property Name="Odd_Days" Type="int" />
+    <Property Name="Odd_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Odd_CreateDt" Type="datetime" />
+    <Property Name="Odd_Status" Type="varchar" MaxLength="20" />
+    <Property Name="Odd_KDNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Odd_BxUIds" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Odr_Id" />
+    </Key>
+    <Property Name="Odr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Odr_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Odr_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Odr_Dt" Type="datetime" />
+    <Property Name="Odr_Remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="Odr_Use_Id" Type="int" />
+    <Property Name="Odr_Ads_Id" Type="int" />
+    <Property Name="Odr_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Odr_Sdt" Type="datetime" />
+    <Property Name="Odr_Edt" Type="datetime" />
+    <Property Name="Odr_Ara_Id" Type="int" />
+    <Property Name="Odr_Zqu_Id" Type="int" />
+    <Property Name="Odr_BxuIds" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Odr_Yjjs" Type="nvarchar" MaxLength="50" />
+    <Property Name="Odr_BxdNos" Type="text" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="Pce_Id" />
+    </Key>
+    <Property Name="Pce_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pce_Prd_Id" Type="int" />
+    <Property Name="Pce_Sup_Id" Type="int" />
+    <Property Name="Pce_Aty_Id" Type="int" />
+    <Property Name="Pce_Ara_Id" Type="int" />
+    <Property Name="Pce_Dtt_Id" Type="int" />
+    <Property Name="Pce_Price" Type="money" />
+    <Property Name="Pce_SellPrice" Type="money" />
+    <Property Name="Pce_MemberPrice" Type="money" />
+    <Property Name="Pce_Dis" Type="float" />
+    <Property Name="Pce_Code" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Prd_Id" />
+    </Key>
+    <Property Name="Prd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prd_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prd_Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Prd_CDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Sup_Id" />
+    </Key>
+    <Property Name="Sup_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sup_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sup_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sup_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sup_Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sup_Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sup_Cdt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Use_Id" />
+    </Key>
+    <Property Name="Use_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Use_LoginName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_Pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_CreateDt" Type="datetime" />
+    <Property Name="Use_UpdateDt" Type="datetime" />
+    <Property Name="Use_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_HzCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_QdName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_QdCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Use_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="z_AdnRleMnu">
+    <Key>
+      <PropertyRef Name="Arm_Id" />
+    </Key>
+    <Property Name="Arm_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Arm_Adn_Id" Type="int" />
+    <Property Name="Arm_Rle_Id" Type="int" />
+    <Property Name="Arm_Mnu_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="z_Advisory">
+    <Key>
+      <PropertyRef Name="Adv_Id" />
+    </Key>
+    <Property Name="Adv_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adv_Ptt_Id" Type="int" />
+    <Property Name="Adv_Pirce" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Adv_SellPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Adv_MemberPrice" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="z_BaoXian">
+    <Key>
+      <PropertyRef Name="Bxn_Id" />
+    </Key>
+    <Property Name="Bxn_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bxn_Ptt_Id" Type="int" />
+    <Property Name="Bxn_Type" Type="int" />
+    <Property Name="Bxn_Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Bxn_SellPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Bxn_MemberPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Bxn_DtType" Type="int" />
+  </EntityType>
+  <EntityType Name="z_Menu">
+    <Key>
+      <PropertyRef Name="Mnu_Id" />
+    </Key>
+    <Property Name="Mnu_Id" Type="int" Nullable="false" />
+    <Property Name="Mnu_ParentId" Type="int" />
+    <Property Name="Mnu_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mnu_Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mnu_IsShow" Type="int" />
+  </EntityType>
+  <EntityType Name="z_Point">
+    <Key>
+      <PropertyRef Name="Pit_Id" />
+    </Key>
+    <Property Name="Pit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pit_Use_Id" Type="int" />
+    <Property Name="Pit_Totals" Type="int" />
+    <Property Name="Pit_Remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="Pit_CreateDt" Type="datetime" />
+    <Property Name="Pit_UpdateDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="z_PrdType">
+    <Key>
+      <PropertyRef Name="Ptt_Id" />
+    </Key>
+    <Property Name="Ptt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ptt_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ptt_ParentId" Type="int" />
+    <Property Name="Ptt_Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ptt_Sort" Type="int" />
+    <Property Name="Ptt_CreateDt" Type="datetime" />
+    <Property Name="Ptt_UpdateDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="z_Role">
+    <Key>
+      <PropertyRef Name="Rle_Id" />
+    </Key>
+    <Property Name="Rle_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rle_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rle_Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rle_CreateDt" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="tralve_test20170515ModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AreaType" EntityType="Self.AreaType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BxuOdrOdd" EntityType="Self.BxuOdrOdd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BxUser" EntityType="Self.BxUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DtType" EntityType="Self.DtType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Price" EntityType="Self.Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_AdnRleMnu" EntityType="Self.z_AdnRleMnu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_Advisory" EntityType="Self.z_Advisory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_BaoXian" EntityType="Self.z_BaoXian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_Menu" EntityType="Self.z_Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_Point" EntityType="Self.z_Point" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_PrdType" EntityType="Self.z_PrdType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="z_Role" EntityType="Self.z_Role" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

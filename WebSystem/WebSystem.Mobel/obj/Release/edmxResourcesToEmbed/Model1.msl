@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tralve_test20170515ModelStoreContainer" CdmEntityContainer="tralve_test20170515Entities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="Ads_Id" ColumnName="Ads_Id" />
+          <ScalarProperty Name="Ads_Use_Id" ColumnName="Ads_Use_Id" />
+          <ScalarProperty Name="Ads_Name" ColumnName="Ads_Name" />
+          <ScalarProperty Name="Ads_Sex" ColumnName="Ads_Sex" />
+          <ScalarProperty Name="Ads_Tel" ColumnName="Ads_Tel" />
+          <ScalarProperty Name="Ads_CardNo" ColumnName="Ads_CardNo" />
+          <ScalarProperty Name="Ads_Address" ColumnName="Ads_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Adn_Id" ColumnName="Adn_Id" />
+          <ScalarProperty Name="Adn_LoginName" ColumnName="Adn_LoginName" />
+          <ScalarProperty Name="Adn_Pwd" ColumnName="Adn_Pwd" />
+          <ScalarProperty Name="Adn_Type" ColumnName="Adn_Type" />
+          <ScalarProperty Name="Adn_Name" ColumnName="Adn_Name" />
+          <ScalarProperty Name="Adn_Tel" ColumnName="Adn_Tel" />
+          <ScalarProperty Name="Adn_Email" ColumnName="Adn_Email" />
+          <ScalarProperty Name="Adn_CreateDt" ColumnName="Adn_CreateDt" />
+          <ScalarProperty Name="Adn_Udt" ColumnName="Adn_Udt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="Ara_Id" ColumnName="Ara_Id" />
+          <ScalarProperty Name="Ara_Name" ColumnName="Ara_Name" />
+          <ScalarProperty Name="Ara_Aty_Id" ColumnName="Ara_Aty_Id" />
+          <ScalarProperty Name="Ara_CDt" ColumnName="Ara_CDt" />
+          <ScalarProperty Name="Ara_Desc" ColumnName="Ara_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AreaTypes">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.AreaType">
+        <MappingFragment StoreEntitySet="AreaType">
+          <ScalarProperty Name="Aty_Id" ColumnName="Aty_Id" />
+          <ScalarProperty Name="Aty_Name" ColumnName="Aty_Name" />
+          <ScalarProperty Name="Aty_CreateDt" ColumnName="Aty_CreateDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BxuOdrOdds">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.BxuOdrOdd">
+        <MappingFragment StoreEntitySet="BxuOdrOdd">
+          <ScalarProperty Name="Buo_Id" ColumnName="Buo_Id" />
+          <ScalarProperty Name="Buo_Bxu_Id" ColumnName="Buo_Bxu_Id" />
+          <ScalarProperty Name="Buo_Odr_Id" ColumnName="Buo_Odr_Id" />
+          <ScalarProperty Name="Buo_Odd_Id" ColumnName="Buo_Odd_Id" />
+          <ScalarProperty Name="Buo_BxdNo" ColumnName="Buo_BxdNo" />
+          <ScalarProperty Name="Buo_Status" ColumnName="Buo_Status" />
+          <ScalarProperty Name="Buo_Dt" ColumnName="Buo_Dt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BxUsers">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.BxUser">
+        <MappingFragment StoreEntitySet="BxUser">
+          <ScalarProperty Name="Bxu_Id" ColumnName="Bxu_Id" />
+          <ScalarProperty Name="Bxu_Name" ColumnName="Bxu_Name" />
+          <ScalarProperty Name="Bxu_Cardno" ColumnName="Bxu_Cardno" />
+          <ScalarProperty Name="Bxu_HzNo" ColumnName="Bxu_HzNo" />
+          <ScalarProperty Name="Bxu_Use_Id" ColumnName="Bxu_Use_Id" />
+          <ScalarProperty Name="Bxu_Tel" ColumnName="Bxu_Tel" />
+          <ScalarProperty Name="Bxu_Sex" ColumnName="Bxu_Sex" />
+          <ScalarProperty Name="Bxu_BxdNo" ColumnName="Bxu_BxdNo" />
+          <ScalarProperty Name="Bxu_ZjType" ColumnName="Bxu_ZjType" />
+          <ScalarProperty Name="Bxu_Birth" ColumnName="Bxu_Birth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DtTypes">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.DtType">
+        <MappingFragment StoreEntitySet="DtType">
+          <ScalarProperty Name="Dtt_Id" ColumnName="Dtt_Id" />
+          <ScalarProperty Name="Dtt_Title" ColumnName="Dtt_Title" />
+          <ScalarProperty Name="Dtt_Sdts" ColumnName="Dtt_Sdts" />
+          <ScalarProperty Name="Dtt_Edts" ColumnName="Dtt_Edts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="Odd_Id" ColumnName="Odd_Id" />
+          <ScalarProperty Name="Odd_Ara_Id" ColumnName="Odd_Ara_Id" />
+          <ScalarProperty Name="Odd_Odr_Id" ColumnName="Odd_Odr_Id" />
+          <ScalarProperty Name="Odd_Prd_Id" ColumnName="Odd_Prd_Id" />
+          <ScalarProperty Name="Odd_Quantity" ColumnName="Odd_Quantity" />
+          <ScalarProperty Name="Odd_Days" ColumnName="Odd_Days" />
+          <ScalarProperty Name="Odd_Type" ColumnName="Odd_Type" />
+          <ScalarProperty Name="Odd_CreateDt" ColumnName="Odd_CreateDt" />
+          <ScalarProperty Name="Odd_Status" ColumnName="Odd_Status" />
+          <ScalarProperty Name="Odd_KDNo" ColumnName="Odd_KDNo" />
+          <ScalarProperty Name="Odd_BxUIds" ColumnName="Odd_BxUIds" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Odr_Id" ColumnName="Odr_Id" />
+          <ScalarProperty Name="Odr_Code" ColumnName="Odr_Code" />
+          <ScalarProperty Name="Odr_Amount" ColumnName="Odr_Amount" />
+          <ScalarProperty Name="Odr_Dt" ColumnName="Odr_Dt" />
+          <ScalarProperty Name="Odr_Remark" ColumnName="Odr_Remark" />
+          <ScalarProperty Name="Odr_Use_Id" ColumnName="Odr_Use_Id" />
+          <ScalarProperty Name="Odr_Ads_Id" ColumnName="Odr_Ads_Id" />
+          <ScalarProperty Name="Odr_Status" ColumnName="Odr_Status" />
+          <ScalarProperty Name="Odr_Sdt" ColumnName="Odr_Sdt" />
+          <ScalarProperty Name="Odr_Edt" ColumnName="Odr_Edt" />
+          <ScalarProperty Name="Odr_Ara_Id" ColumnName="Odr_Ara_Id" />
+          <ScalarProperty Name="Odr_Zqu_Id" ColumnName="Odr_Zqu_Id" />
+          <ScalarProperty Name="Odr_BxuIds" ColumnName="Odr_BxuIds" />
+          <ScalarProperty Name="Odr_Yjjs" ColumnName="Odr_Yjjs" />
+          <ScalarProperty Name="Odr_BxdNos" ColumnName="Odr_BxdNos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prices">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Price">
+        <MappingFragment StoreEntitySet="Price">
+          <ScalarProperty Name="Pce_Id" ColumnName="Pce_Id" />
+          <ScalarProperty Name="Pce_Prd_Id" ColumnName="Pce_Prd_Id" />
+          <ScalarProperty Name="Pce_Sup_Id" ColumnName="Pce_Sup_Id" />
+          <ScalarProperty Name="Pce_Aty_Id" ColumnName="Pce_Aty_Id" />
+          <ScalarProperty Name="Pce_Ara_Id" ColumnName="Pce_Ara_Id" />
+          <ScalarProperty Name="Pce_Dtt_Id" ColumnName="Pce_Dtt_Id" />
+          <ScalarProperty Name="Pce_Price" ColumnName="Pce_Price" />
+          <ScalarProperty Name="Pce_SellPrice" ColumnName="Pce_SellPrice" />
+          <ScalarProperty Name="Pce_MemberPrice" ColumnName="Pce_MemberPrice" />
+          <ScalarProperty Name="Pce_Dis" ColumnName="Pce_Dis" />
+          <ScalarProperty Name="Pce_Code" ColumnName="Pce_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Prd_Id" ColumnName="Prd_Id" />
+          <ScalarProperty Name="Prd_Name" ColumnName="Prd_Name" />
+          <ScalarProperty Name="Prd_Desc" ColumnName="Prd_Desc" />
+          <ScalarProperty Name="Prd_CDt" ColumnName="Prd_CDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Sup_Id" ColumnName="Sup_Id" />
+          <ScalarProperty Name="Sup_Name" ColumnName="Sup_Name" />
+          <ScalarProperty Name="Sup_Code" ColumnName="Sup_Code" />
+          <ScalarProperty Name="Sup_Type" ColumnName="Sup_Type" />
+          <ScalarProperty Name="Sup_Desc" ColumnName="Sup_Desc" />
+          <ScalarProperty Name="Sup_Mobile" ColumnName="Sup_Mobile" />
+          <ScalarProperty Name="Sup_Cdt" ColumnName="Sup_Cdt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Use_Id" ColumnName="Use_Id" />
+          <ScalarProperty Name="Use_LoginName" ColumnName="Use_LoginName" />
+          <ScalarProperty Name="Use_Pwd" ColumnName="Use_Pwd" />
+          <ScalarProperty Name="Use_Type" ColumnName="Use_Type" />
+          <ScalarProperty Name="Use_Mobile" ColumnName="Use_Mobile" />
+          <ScalarProperty Name="Use_Email" ColumnName="Use_Email" />
+          <ScalarProperty Name="Use_Code" ColumnName="Use_Code" />
+          <ScalarProperty Name="Use_CreateDt" ColumnName="Use_CreateDt" />
+          <ScalarProperty Name="Use_UpdateDt" ColumnName="Use_UpdateDt" />
+          <ScalarProperty Name="Use_Name" ColumnName="Use_Name" />
+          <ScalarProperty Name="Use_HzCode" ColumnName="Use_HzCode" />
+          <ScalarProperty Name="Use_QdName" ColumnName="Use_QdName" />
+          <ScalarProperty Name="Use_QdCode" ColumnName="Use_QdCode" />
+          <ScalarProperty Name="Use_Status" ColumnName="Use_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_AdnRleMnu">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_AdnRleMnu">
+        <MappingFragment StoreEntitySet="z_AdnRleMnu">
+          <ScalarProperty Name="Arm_Id" ColumnName="Arm_Id" />
+          <ScalarProperty Name="Arm_Adn_Id" ColumnName="Arm_Adn_Id" />
+          <ScalarProperty Name="Arm_Rle_Id" ColumnName="Arm_Rle_Id" />
+          <ScalarProperty Name="Arm_Mnu_Id" ColumnName="Arm_Mnu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_Advisory">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_Advisory">
+        <MappingFragment StoreEntitySet="z_Advisory">
+          <ScalarProperty Name="Adv_Id" ColumnName="Adv_Id" />
+          <ScalarProperty Name="Adv_Ptt_Id" ColumnName="Adv_Ptt_Id" />
+          <ScalarProperty Name="Adv_Pirce" ColumnName="Adv_Pirce" />
+          <ScalarProperty Name="Adv_SellPrice" ColumnName="Adv_SellPrice" />
+          <ScalarProperty Name="Adv_MemberPrice" ColumnName="Adv_MemberPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_BaoXian">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_BaoXian">
+        <MappingFragment StoreEntitySet="z_BaoXian">
+          <ScalarProperty Name="Bxn_Id" ColumnName="Bxn_Id" />
+          <ScalarProperty Name="Bxn_Ptt_Id" ColumnName="Bxn_Ptt_Id" />
+          <ScalarProperty Name="Bxn_Type" ColumnName="Bxn_Type" />
+          <ScalarProperty Name="Bxn_Price" ColumnName="Bxn_Price" />
+          <ScalarProperty Name="Bxn_SellPrice" ColumnName="Bxn_SellPrice" />
+          <ScalarProperty Name="Bxn_MemberPrice" ColumnName="Bxn_MemberPrice" />
+          <ScalarProperty Name="Bxn_DtType" ColumnName="Bxn_DtType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_Menu">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_Menu">
+        <MappingFragment StoreEntitySet="z_Menu">
+          <ScalarProperty Name="Mnu_Id" ColumnName="Mnu_Id" />
+          <ScalarProperty Name="Mnu_ParentId" ColumnName="Mnu_ParentId" />
+          <ScalarProperty Name="Mnu_Name" ColumnName="Mnu_Name" />
+          <ScalarProperty Name="Mnu_Url" ColumnName="Mnu_Url" />
+          <ScalarProperty Name="Mnu_IsShow" ColumnName="Mnu_IsShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_Point">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_Point">
+        <MappingFragment StoreEntitySet="z_Point">
+          <ScalarProperty Name="Pit_Id" ColumnName="Pit_Id" />
+          <ScalarProperty Name="Pit_Use_Id" ColumnName="Pit_Use_Id" />
+          <ScalarProperty Name="Pit_Totals" ColumnName="Pit_Totals" />
+          <ScalarProperty Name="Pit_Remark" ColumnName="Pit_Remark" />
+          <ScalarProperty Name="Pit_CreateDt" ColumnName="Pit_CreateDt" />
+          <ScalarProperty Name="Pit_UpdateDt" ColumnName="Pit_UpdateDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_PrdType">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_PrdType">
+        <MappingFragment StoreEntitySet="z_PrdType">
+          <ScalarProperty Name="Ptt_Id" ColumnName="Ptt_Id" />
+          <ScalarProperty Name="Ptt_Name" ColumnName="Ptt_Name" />
+          <ScalarProperty Name="Ptt_ParentId" ColumnName="Ptt_ParentId" />
+          <ScalarProperty Name="Ptt_Desc" ColumnName="Ptt_Desc" />
+          <ScalarProperty Name="Ptt_Sort" ColumnName="Ptt_Sort" />
+          <ScalarProperty Name="Ptt_CreateDt" ColumnName="Ptt_CreateDt" />
+          <ScalarProperty Name="Ptt_UpdateDt" ColumnName="Ptt_UpdateDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="z_Role">
+      <EntityTypeMapping TypeName="tralve_test20170515.Model.z_Role">
+        <MappingFragment StoreEntitySet="z_Role">
+          <ScalarProperty Name="Rle_Id" ColumnName="Rle_Id" />
+          <ScalarProperty Name="Rle_Name" ColumnName="Rle_Name" />
+          <ScalarProperty Name="Rle_Desc" ColumnName="Rle_Desc" />
+          <ScalarProperty Name="Rle_CreateDt" ColumnName="Rle_CreateDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

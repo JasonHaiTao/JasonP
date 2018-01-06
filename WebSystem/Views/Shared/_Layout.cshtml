@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style>
+        h1{
+            color:#ffffff;
+            font-size:20px;
+            padding:10px;
+
+        }
+        #contsec li dd{
+            display:none ;
+        }
+        showhh{
+            display:block;
+        }
+
+        dt {
+        cursor:pointer;
+
+        }
+        .rig {
+        
+        color:#19a97b;
+        cursor:pointer;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <header style="background-color:#16A085">
+        <h1 style="font-size:30px">逍遥海外后台管理系统</h1>
+        <ul class="rt_nav" style="height:58px;padding:0px; ">
+            <li><a href="http://www.mycodes.net" target="_blank" class="website_icon">站点首页</a></li>
+            <li><a href="#" class="clear_icon">清除缓存</a></li>
+            <li><a class="admin_icon">@Html.Action("Header", "Account")</a></li>
+            <li><a href="#" class="set_icon">账号设置</a></li>
+            <li><a href="@Url.Action("logOut","Account")" class="quit_icon">安全退出</a></li>
+        </ul>
+    </header>
+    <aside class="lt_aside_nav content mCustomScrollbar" style="background-color:#f7fbd5">
+        <h2 style="height:50px"><a href="@Url.Action("Index","Home")">起始页</a></h2>
+        <ul id="contsec">
+            <li>
+                <dl>
+                    <dt>商品管理<span style="display:block;float:right;transition:transform 0.8S" class="rig">></span></dt>
+                    <!--当前链接则添加class:active-->
+                    <dd><a href="@Url.Action("ProductList","Product")">商品列表</a></dd>
+                    <dd><a href="@Url.Action("ProductDetail","Product")">商品详情</a></dd>
+                    <dd><a href="@Url.Action("RecycleBin","Product")">商品回收站</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>订单管理<span style="display:block;float:right;transition:transform 0.8S" class="rig">></span></dt>
+                    <dd><a href="@Url.Action("OrderList","Order")">订单列表</a></dd>
+                    <dd><a href="@Url.Action("OrderDetail","Order")">订单详情</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>会员管理<span style="display:block;float:right;transition:transform 0.8S" class="rig">></span></dt>
+                    <dd><a href="@Url.Action("MemberList","User")">会员列表</a></dd>
+                    <dd><a href="@Url.Action("MemberDetail","User")">添加会员（详情）</a></dd>
+                    <dd><a href="@Url.Action("MemRank","User")">会员等级</a></dd>
+                    <dd><a href="@Url.Action("AbjustFunding","User")">会员资金管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>基础设置<span style="display:block;float:right;transition:transform 0.8S" class="rig">></span></dt>
+                    <dd><a href="#">站点基础设置</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>配送与支付设置<span style="display:block;float:right;transition:transform 0.8S" class="rig">></span></dt>
+                    <dd><a href="express_list">配送方式</a></dd>
+                    <dd><a href="pay_list">支付方式</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>在线统计<span style="display:block;float:right;transition:transform 0.8S" class="rig">></span></dt>
+                    <dd><a href="@Url.Action("DischargeStatistic", "Statistics")">流量统计</a></dd>
+                    <dd><a href="@Url.Action("SalesVolume","Statistics")">销售额统计</a></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="btm_infor">© 逍遥海外--版权所有</p>
+            </li>
+        </ul>
+    </aside>
+    
+    <section class="rt_wrap content mCustomScrollbar"  style="background-color:#f7fbd5">
+
+        <div class="rt_content">
+
+            @RenderBody()
+
+        </div>
+    </section>
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/js/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#contsec li dt").click(function () {
+                var $list = $(this).siblings();
+                var $MMP = $(this);
+                if ($list.css("display") == "block") {
+                    $MMP.children().css("transform", "rotate(0deg)");
+
+                    $list.hide(300);
+                }
+                    //$list.css("display", "none");
+                else {
+                    //$list.css("display", "block");
+                    $MMP.children().css("transform", "rotate(90deg)")
+                    $list.show(300);
+                }
+
+            });
+            $("#contsec li dd").click(function () {
+                var $list = $(this);
+                $list.css("showhh");
+            });
+
+
+            $("#contsec li dt").mouseover(function () {
+                $(this).addClass("onbg");  //为该元素添加类样式.onbg
+            }).mouseout(function () {
+                $(this).removeClass("onbg");//为该元素移除类样式.onbg
+            });
+        });
+	(function($){
+		$(window).load(function(){
+
+			$("a[rel='load-content']").click(function(e){
+				e.preventDefault();
+				var url=$(this).attr("href");
+				$.get(url,function(data){
+					$(".content .mCSB_container").append(data); //load new content inside .mCSB_container
+					//scroll-to appended content
+					$(".content").mCustomScrollbar("scrollTo","h2:last");
+				});
+			});
+
+			$(".content").delegate("a[href='top']","click",function(e){
+				e.preventDefault();
+				$(".content").mCustomScrollbar("scrollTo",$(this).attr("href"));
+			});
+
+		});
+
+
+
+	})(jQuery);
+
+
+
+    </script>
+   
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

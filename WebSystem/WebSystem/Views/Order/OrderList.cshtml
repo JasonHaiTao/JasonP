@@ -1,0 +1,77 @@
+﻿@model List<WebSystem.Mobel.ViewModesl.OrderModel>
+
+<section>
+    <div class="rt_content">
+        <div class="page_title">
+            <h2 class="fl">订单管理 > > 订单列表</h2>
+            <a class="fr top_rt_btn add_icon">添加商品</a>
+        </div>
+        <section class="mtb">
+            <select class="select">
+                <option>订单状态</option>
+                <option>待付款</option>
+                <option>待发货</option>
+                <option>待评价</option>
+            </select>
+            <input type="text" class="textbox textbox_225" placeholder="输入订单编号或收件人姓名/电话..." />
+            <input type="button" value="查询" class="group_btn" />
+        </section>
+        <table class="table">
+            <tr>
+                <th style="width:30px">序号</th>
+                <th>订单编号</th>
+                <th>国家</th>
+                <th>下单人</th>
+                <th>状态</th>
+                <th>日期</th>
+                <th>订单金额</th>
+                <th>操作</th>
+            </tr>
+
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td class="center" style="width:200px">@item.Odr_Code</td>
+                        <td>@item.Are_Name</td>
+                        <td>@item.Use_Name</td>
+                        <td>
+                           @item.Odr_Status
+                        </td>
+                        <td class="center">@item.Odr_Sdt</td>
+                        <td class="center">@item.Odr_Amount</td>     
+                        <td class="center">
+                            <a href="#" onclick="javascript:$('#chuangkou').load('@Url.Action("OrderDetail", "Order",new  {id=item.Odr_Code },null)')" title="查看订单" class="link_icon">&#118;</a>
+
+                            <!--暂时先不开通删除订单功能-->
+                            @*@using (Ajax.BeginForm("DeleteOrder", "Order", new { dId = item.Odr_Code }, new AjaxOptions { OnSuccess = "DeleteBranch(data)" }))
+                            {
+                                <a href="#" title="删除" class="link_icon">&#100;</a>
+                            }*@
+                        </td>
+                    </tr>
+                }
+            }
+
+
+
+        </table>
+        <aside class="paging">
+            <a class="cctvOne">第一页</a>
+            <a href="@Url.Action("","")" class="cctv" >@ViewBag.Index</a>
+            <a href="@Url.Action("","")" class="cctv" >@(ViewBag.Index + 1)</a>
+            <a href="@Url.Action("","")" class="cctv" >@(ViewBag.Index + 2)</a>
+            <a href="@Url.Action("","")" >…</a>
+            <a href="@Url.Action("","")" class="cctv">@ViewBag.OverIndex</a>
+            <a href="@Url.Action("","")" class="cctvover">最后一页</a>
+        </aside>
+        <aside>
+            
+
+        </aside>
+
+    </div>
+</section>
+
+
